@@ -1,7 +1,7 @@
-import {tailwind, getColor} from "tailwind"
+import { tailwind, getColor } from 'tailwind'
 
-const tintColorLight = '#2f95dc';
-const tintColorDark = '#fff';
+const tintColorLight = '#2f95dc'
+const tintColorDark = '#fff'
 
 export default {
   light: {
@@ -18,4 +18,4 @@ export default {
     tabIconDefault: '#ccc',
     tabIconSelected: tintColorDark,
   },
-};
+}

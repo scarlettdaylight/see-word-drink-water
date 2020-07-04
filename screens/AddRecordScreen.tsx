@@ -1,16 +1,16 @@
-import * as React from 'react';
-import { StyleSheet, Button } from 'react-native';
-import { Text, View } from 'components/Themed';
-import { PrimaryText } from 'components/StyledText';
-import {StackScreenProps} from "@react-navigation/stack"
-import {HomeParamList} from "../types"
+import * as React from 'react'
+import { StyleSheet, Button } from 'react-native'
+import { Text, View } from 'components/Themed'
+import { PrimaryText } from 'components/StyledText'
+import { StackScreenProps } from '@react-navigation/stack'
+import { HomeParamList } from '../types'
 
-const AddRecordScreen = ({navigation}: StackScreenProps<HomeParamList, 'AddRecordScreen'>) => {
+const AddRecordScreen = ({ navigation }: StackScreenProps<HomeParamList, 'AddRecordScreen'>) => {
   return (
     <View style={styles.container}>
       <PrimaryText>AddRecordScreen </PrimaryText>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -28,6 +28,6 @@ const styles = StyleSheet.create({
     height: 1,
     width: '80%',
   },
-});
+})
 
 export default AddRecordScreen
