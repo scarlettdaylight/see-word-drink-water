@@ -1,16 +1,14 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
-
-import EditScreenInfo from 'components/EditScreenInfo';
+import { StyleSheet, Button } from 'react-native';
 import { Text, View } from 'components/Themed';
 import { PrimaryText } from 'components/StyledText';
+import {StackScreenProps} from "@react-navigation/stack"
+import {HomeParamList} from "../types"
 
-export default function TabOneScreen() {
+const AddRecordScreen = ({navigation}: StackScreenProps<HomeParamList, 'AddRecordScreen'>) => {
   return (
     <View style={styles.container}>
-      <PrimaryText>Tab One</PrimaryText>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabOneScreen.tsx" />
+      <PrimaryText>AddRecordScreen </PrimaryText>
     </View>
   );
 }
@@ -31,3 +29,5 @@ const styles = StyleSheet.create({
     width: '80%',
   },
 });
+
+export default AddRecordScreen
