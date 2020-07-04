@@ -9,7 +9,13 @@ module.exports = function(api) {
             ["module-resolver",{
               "root": ["./"],
               "alias": {
-                "tailwind": "./tailwind"
+                "tailwind": "./tailwind",
+                "components": "./components",
+                "constants": "./constants",
+                "hooks": "./hooks",
+                "navigation": "./navigation",
+                "screens": "./screens",
+                "assets": "./assets",
               }
             }
             ]

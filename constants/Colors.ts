@@ -1,9 +1,11 @@
+import {tailwind, getColor} from "tailwind"
+
 const tintColorLight = '#2f95dc';
 const tintColorDark = '#fff';
 
 export default {
   light: {
-    text: '#000',
+    text: getColor('gray-900'),
     background: '#fff',
     tint: tintColorLight,
     tabIconDefault: '#ccc',
