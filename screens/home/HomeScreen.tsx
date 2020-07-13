@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { StackScreenProps } from '@react-navigation/stack'
 import { StyleSheet } from 'react-native'
-import { HomeParamList } from '../types'
+import { HomeParamList } from '../../types'
 import { View } from 'components/Themed'
 import { PrimaryText } from 'components/StyledText'
-import { PrimaryButton } from '../components/StyledButton'
+import { PrimaryButton } from '../../components/StyledButton'
 
 const HomeScreen = ({ navigation }: StackScreenProps<HomeParamList, 'HomeScreen'>) => {
   const onPressDrink = () => {

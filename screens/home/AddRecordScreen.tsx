@@ -3,7 +3,7 @@ import { StyleSheet, Button } from 'react-native'
 import { Text, View } from 'components/Themed'
 import { PrimaryText } from 'components/StyledText'
 import { StackScreenProps } from '@react-navigation/stack'
-import { HomeParamList } from '../types'
+import { HomeParamList } from '../../types'
 
 const AddRecordScreen = ({ navigation }: StackScreenProps<HomeParamList, 'AddRecordScreen'>) => {
   return (

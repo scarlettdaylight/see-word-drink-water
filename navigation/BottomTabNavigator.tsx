@@ -2,14 +2,15 @@ import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { createStackNavigator } from '@react-navigation/stack'
 import * as React from 'react'
-
 import Colors from '../constants/Colors'
 import useColorScheme from '../hooks/useColorScheme'
-import HomeScreen from '../screens/HomeScreen'
-import StatisticScreen from '../screens/StatisticScreen'
-import AddRecordScreen from '../screens/AddRecordScreen'
-import { BottomTabParamList, HomeParamList, SettingsParamList, StatisticParamList } from '../types'
+import HomeScreen from '../screens/home/HomeScreen'
+import StatisticScreen from '../screens/statistic/StatisticScreen'
+import AddRecordScreen from '../screens/home/AddRecordScreen'
 import SettingsScreen from '../screens/SettingsScreen'
+import AlarmScreen from '../screens/alarm/AlarmScreen'
+import { BottomTabParamList, HomeParamList, SettingsParamList, StatisticParamList, AlarmParamList } from '../types'
+
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>()
 
@@ -30,6 +31,13 @@ export default function BottomTabNavigator() {
         component={StatisticNavigator}
         options={{
           tabBarIcon: ({ color }) => <MaterialCommunityIcons name='chart-line' size={24} color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name='Alarm'
+        component={AlarmNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <MaterialCommunityIcons name="alarm" size={24} color={color} />,
         }}
       />
       <BottomTab.Screen
@@ -67,6 +75,20 @@ const StatisticNavigator = () => {
         options={{ headerTitle: 'Statistic' }}
       />
     </StatisticStack.Navigator>
+  )
+}
+
+const AlarmStack = createStackNavigator<AlarmParamList>()
+
+const AlarmNavigator = () => {
+  return (
+    <AlarmStack.Navigator>
+      <AlarmStack.Screen
+        name='AlarmScreen'
+        component={AlarmScreen}
+        options={{ headerTitle: 'Alarm' }}
+      />
+    </AlarmStack.Navigator>
   )
 }
 
