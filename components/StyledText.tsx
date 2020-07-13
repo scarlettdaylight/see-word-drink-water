@@ -2,14 +2,18 @@ import * as React from 'react'
 import { Text, TextProps } from './Themed'
 import { tailwind, textPrimary } from 'tailwind'
 
-export function MonoText(props: TextProps) {
+export const MonoText = (props: TextProps) => {
   return <Text {...props} style={[props.style, { fontFamily: 'space-mono' }, textPrimary]} />
 }
 
-export function PrimaryText(props: TextProps) {
+export const PrimaryText = (props: TextProps) => {
   return <Text {...props} style={[props.style, tailwind('text-gray-900')]} />
 }
 
-export function SecondaryText(props: TextProps) {
+export const SecondaryText = (props: TextProps) => {
   return <Text {...props} style={[props.style, tailwind('text-gray-500')]} />
+}
+
+export const HightlightText = (props: TextProps) => {
+  return <Text {...props} style={[props.style, tailwind('text-blue-500')]} />
 }

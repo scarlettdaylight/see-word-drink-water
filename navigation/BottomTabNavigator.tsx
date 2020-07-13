@@ -8,7 +8,8 @@ import useColorScheme from '../hooks/useColorScheme'
 import HomeScreen from '../screens/HomeScreen'
 import StatisticScreen from '../screens/StatisticScreen'
 import AddRecordScreen from '../screens/AddRecordScreen'
-import { BottomTabParamList, HomeParamList, StatisticParamList } from '../types'
+import { BottomTabParamList, HomeParamList, SettingsParamList, StatisticParamList } from '../types'
+import SettingsScreen from '../screens/SettingsScreen'
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>()
 
@@ -29,6 +30,13 @@ export default function BottomTabNavigator() {
         component={StatisticNavigator}
         options={{
           tabBarIcon: ({ color }) => <MaterialCommunityIcons name='chart-line' size={24} color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name='Settings'
+        component={SettingsNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <MaterialCommunityIcons name='settings' size={24} color={color} />,
         }}
       />
     </BottomTab.Navigator>
@@ -59,5 +67,19 @@ const StatisticNavigator = () => {
         options={{ headerTitle: 'Statistic' }}
       />
     </StatisticStack.Navigator>
+  )
+}
+
+const SettingsStack = createStackNavigator<SettingsParamList>()
+
+const SettingsNavigator = () => {
+  return (
+    <SettingsStack.Navigator>
+      <SettingsStack.Screen
+        name='SettingsScreen'
+        component={SettingsScreen}
+        options={{ headerTitle: 'Settings' }}
+      />
+    </SettingsStack.Navigator>
   )
 }

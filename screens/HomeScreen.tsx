@@ -1,9 +1,10 @@
 import * as React from 'react'
-import { StyleSheet, Button } from 'react-native'
-import { Text, View } from 'components/Themed'
-import { PrimaryText } from 'components/StyledText'
 import { StackScreenProps } from '@react-navigation/stack'
+import { StyleSheet } from 'react-native'
 import { HomeParamList } from '../types'
+import { View } from 'components/Themed'
+import { PrimaryText } from 'components/StyledText'
+import { PrimaryButton } from '../components/StyledButton'
 
 const HomeScreen = ({ navigation }: StackScreenProps<HomeParamList, 'HomeScreen'>) => {
   const onPressDrink = () => {
@@ -12,14 +13,15 @@ const HomeScreen = ({ navigation }: StackScreenProps<HomeParamList, 'HomeScreen'
 
   return (
     <View style={styles.container}>
+      <PrimaryText>Next reminder at </PrimaryText>
+      <PrimaryText>16:00</PrimaryText>
+      <View style={styles.separator} lightColor='#eee' darkColor='rgba(255,255,255,0.1)' />
       <PrimaryText>Volume of Water you drank today: </PrimaryText>
       <PrimaryText>60L</PrimaryText>
-      <View style={styles.separator} lightColor='#eee' darkColor='rgba(255,255,255,0.1)' />
-      <Button
+      <PrimaryButton
         onPress={onPressDrink}
         title='Drink now!'
-        color='#841584'
-        accessibilityLabel='Learn more about this purple button'
+        accessibilityLabel='Drink now!'
       />
     </View>
   )
